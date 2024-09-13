@@ -1,7 +1,8 @@
 # Decision_Support_System
 Laboratory of Data Science Project at @UniPi a.y. 2022/23
 
-This repository contains the project for the *Laboratory of Data Science* course, which is divided into three main parts (for a detailed project description, see here [..]):
+This repository contains the project for the *Laboratory of Data Science* course, which is divided into three main parts ([View the report](./report.pdf):
+ ):
 
 - **Part 1: Database Creation and Population**  
    The first step in the Business Intelligence (BI) process involves creating and populating a database using SQL Server Management Studio. Starting from multiple files, the database schema was designed and implemented (as in Figure).
