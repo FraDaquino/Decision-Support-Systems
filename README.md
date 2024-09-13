@@ -1,7 +1,7 @@
 # Decision_Support_System
 Laboratory of Data Science Project at @UniPi a.y. 2022/23
 
-This repository contains the project for the *Laboratory of Data Science* course, which is divided into three main parts ([View the report](./report.pdf):
+This repository contains the project for the *Laboratory of Data Science* course, which is divided into three main parts ([View the report](./LDS_FinalReport_group17.pdf):
  ):
 
 - **Part 1: Database Creation and Population**  
