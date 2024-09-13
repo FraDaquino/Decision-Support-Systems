@@ -1,0 +1,22 @@
+--1)Show the student that made the most mistakes for each country.
+select [Measures].[Incorrect] on columns,
+generate([Users].[RegionCountryContinent].[Country Name],
+topcount(([Users].[Country Name].currentmember,[Users].[Userid].[Userid]),1,[Measures].[Incorrect]))on rows
+from [Group 17 DB]
+
+--2)For each subject, show the student with the highest total correct answers.
+select [Measures].[Correct] on columns,
+generate([Subject].[Subjectid].[Subjectid],
+nonempty(topcount(([Subject].[Subjectid].currentmember,[Users].[Userid].[Userid]),1,[Measures].[Correct])))on rows
+from [Group 17 DB]
+
+--3)For each continent, show the student with the highest ratio between his total correct
+--  answers and the average correct answers of that continent.
+with member avg_correctanswers as
+AVG(([Users].[Continent].currentmember,[Users].[Userid].[Userid]),[Measures].[Correct])
+member ratio as
+iif(avg_correctanswers = NULL, 0, [Measures].[Correct]/avg_correctanswers) --se avg è nullo metti 0 , altrimenti calcola ratio
+select {avg_correctanswers,ratio} on columns,
+generate([Users].[Continent].[Continent],
+topcount(([Users].[Continent].currentmember,[Users].[Userid].[Userid]),1,ratio)) on rows
+from [Group 17 DB]
